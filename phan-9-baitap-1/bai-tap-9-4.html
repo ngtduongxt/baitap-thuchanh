@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Kiểm tra số lớn nhất</h2>
+<input id="ns1" type="number" placeholder="Nhập số thứ 1">
+<input id="ns2" type="number" placeholder="Nhập số thứ 2">
+<input id="ns3" type="number" placeholder="Nhập số thứ 3">
+<br>
+<br>
+<button id="kt" onclick="kt()">Kiểm Tra</button>
+<dv id="kq"></dv>
+</body>
+</html>
+
+
+<script>
+    function kt() {
+        let s1 = document.getElementById("ns1").value;
+        let s2 = document.getElementById("ns2").value;
+        let s3 = document.getElementById("ns3").value;
+        if (s1 > s2) {
+            if (s1 > s3) {
+                document.getElementById("kq").innerHTML = "Trong 3 số lớn nhất là: " + s1;
+            } else {
+                document.getElementById("kq").innerHTML = "Trong 3 số  lớn nhất là: " + s3;
+            }
+        } else if (s2 > s3) {
+            document.getElementById("kq").innerHTML = "Trong 3 số lớn nhất là: " + s2;
+        } else {
+            document.getElementById("kq").innerHTML = "Trong 3 số lớn nhất là: " + s3;
+        }
+    }
+</script>

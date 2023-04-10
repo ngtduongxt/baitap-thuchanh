@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Tính thuế thu nhập cá nhân</h2>
+<p>Mức lương:
+<input type="number" id="tncn" name="salary" placeholder="Nhập mức lương">
+<br><br>
+<button onclick="kt()">Tính thuế</button>
+<br><br>
+<div id="kq"></div>
+
+</body>
+</html>
+
+
+<script>
+  function kt() {
+    let tt = parseFloat(document.getElementById("tncn").value);
+    let mucthue = 0;
+
+    switch (true) {
+      case (tt <= 5000000):
+        mucthue = tt * 0.05;
+        break;
+      case (tt <= 10000000):
+        mucthue = 250000 + (tt - 5000000) * 0.1;
+        break;
+      case (tt <= 18000000):
+        mucthue = 750000 + (tt - 10000000) * 0.15;
+        break;
+      case (tt <= 32000000):
+        mucthue = 1950000 + (tt - 18000000) * 0.2;
+        break;
+      case (tt <= 52000000):
+        mucthue = 4750000 + (tt - 32000000) * 0.25;
+        break;
+      case (tt <= 80000000):
+        mucthue = 9750000 + (tt - 52000000) * 0.3;
+        break;
+      default:
+        mucthue = 18150000 + (tt - 80000000) * 0.35;
+        break;
+    }
+
+    document.getElementById("kq").innerHTML = "Thuế thu nhập cá nhân của bạn là: " + mucthue + " đồng";
+  }
+</script>

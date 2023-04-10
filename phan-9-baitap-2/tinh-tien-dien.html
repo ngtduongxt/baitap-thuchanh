@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Tính tiền điện</h2>
+
+<h3>Bảng giá</h3>
+<p>Bậc 1: 0 - 50 kWh (1.678 đồng/ kWh). Thành tiền: 83.900 đồng.
+<p>Bậc 2: 50 - 100 kWh ( 1.734 đồng/ kWh). Thành tiền: 86.700 đồng.
+<p>Bậc 3: 100 - 200 kWh (2.014 đồng/ kWh). Thành tiền: 201.400 đồng.
+<p>Bậc 4: 200 - 300 kWh (2.536 đồng/ kWh). Thành tiền: 253.600 đồng.
+<p>Bậc 5: 300 - 400 kWh (2.834 đồng/ kWh). Thành tiền: 283.400 đồng.
+<p>Bậc 6: 400 - 500 kWh (2.927 đồng/ kWh). Thành tiền: 292.700 đồng.
+    <br>
+    <br>
+    <input id="nsd" type="number" placeholder="Nhập số điện kWh">
+    <button onclick="kt()">Thành Tiền</button>
+<div id="kq"></div>
+</body>
+</html>
+
+
+<script>
+    function kt() {
+        let sd = parseFloat(document.getElementById("nsd").value);
+        let tt = 0;
+
+        switch (true) {
+            case (sd > 0 && sd <= 50):
+                tt = sd * 1678;
+                break;
+            case (sd > 50 && sd <= 100):
+                tt = sd * 1734;
+                break;
+            case (sd > 100 && sd <= 200):
+                tt = sd * 2014;
+                break;
+            case (sd > 200 && sd <= 300):
+                tt = sd * 2536;
+                break;
+            case (sd > 300 && sd <= 400):
+                tt = sd * 2834;
+                break;
+            case (sd > 400):
+                tt = sd * 2927;
+                break;
+            default:
+                document.getElementById("kq").innerText = "Số điện không hợp lệ";
+                return;
+        }
+        document.getElementById("kq").innerText = "Số tiền bạn phải thanh toán là: " + tt + " đồng";
+    }
+</script>
+
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Kiểm tra xem 3 số thực (a,b,c) nhập vào có phải là cạnh của một tam giác.</h2>
+
+<input id="a" type="number" placeholder="Nhập cạnh a">
+<input id="b" type="number" placeholder="Nhập cạnh b">
+<input id="c" type="number" placeholder="Nhập cạnh c">
+<br>
+<br>
+<button onclick="kt()">Kiểm tra</button>
+<br>
+<br>
+<h4><div id="kq"></div></h4>
+</body>
+</html>
+
+
+<script>
+    function kt() {
+        let ca = parseFloat(document.getElementById("a").value);
+        let cb = parseFloat(document.getElementById("b").value);
+        let cc = parseFloat(document.getElementById("c").value);
+        if (ca < 0 || cb < 0 || cc < 0)
+            document.getElementById("kq").innerText = "Không phải độ dài của 3 cạnh tam giác";
+        else if (ca + cb < cc || cb + cc < ca || ca + cc < cb)
+            document.getElementById("kq").innerText = "Không phải độ dài của 3 cạnh tam giác";
+        else
+            document.getElementById("kq").innerText = "Là độ dài của 3 cạnh tam giác";
+    }
+</script>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="dkt" type="number" placeholder="Nhập điểm kiểm tra">
+<input id="tgk" type="number" placeholder="Nhập điểm thi giữa kỳ">
+<input id="tck" type="number" placeholder="Nhập điểm thi cuối kỳ">
+<br>
+<br>
+<button id="kt" onclick="ktd()">Kiểm tra xếp hạng</button>
+<div id="kq"></div>
+</body>
+</html>
+
+
+<script>
+    function ktd() {
+        let ndkt = parseFloat(document.getElementById("dkt").value);
+        let ndgk = parseFloat(document.getElementById("tgk").value);
+        let ndck = parseFloat(document.getElementById("tck").value);
+        let tong = (ndkt + ndgk + ndck) / 3;
+
+        if (tong >= 8) {
+            document.getElementById("kq").innerText = "Tổng điểm học sinh là: " + tong + "\n" + "Học sinh xếp loại: Giỏi";
+        } else if (tong < 8 && tong >= 6.5) {
+            document.getElementById("kq").innerText = "Tổng điểm học sinh là: " + tong + "\n" + "Học sinh xếp loại: Khá";
+        } else if (tong < 6.5 && tong >= 3.5) {
+            document.getElementById("kq").innerText = "Tổng điểm học sinh là: " + tong + "\n" + "Học sinh xếp loại: Trung Bình";
+        } else {
+            document.getElementById("kq").innerText = "Tổng điểm học sinh là: " + tong + "\n" + "Học sinh xếp loại: Yếu";
+        }
+    }
+</script>

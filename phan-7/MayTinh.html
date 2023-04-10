@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Ứng dụng máy tính</h2>
+<input type="number" id="o1" placeholder="Nhập số vào đây" step="0.01">
+<input type="number" id="o2" placeholder="Nhập số vào đây" step="0.01">
+<br><br>
+<button onclick="cong()">Cộng</button>
+<button onclick="tru()">Trừ</button>
+<button onclick="nhan()">Nhân</button>
+<button onclick="chia()">Chia</button>
+<h3>Kết quả:</h3>
+<div id="kq"></div>
+</body>
+</html>
+
+<script>
+    function cong() {
+        let so1 = document.getElementById("o1").value;
+        let so2 = document.getElementById("o2").value;
+        let ptc = Number(so1) + Number(so2);
+        document.getElementById("kq").innerHTML = ptc;
+    }
+    function tru() {
+        let so1 = document.getElementById("o1").value;
+        let so2 = document.getElementById("o2").value;
+        let ptt = Number(so1) - Number(so2);
+        document.getElementById("kq").innerHTML = ptt;
+    }
+    function nhan() {
+        let so1 = document.getElementById("o1").value;
+        let so2 = document.getElementById("o2").value;
+        let ptn = Number(so1) * Number(so2);
+        document.getElementById("kq").innerHTML = ptn;
+    }
+    function chia() {
+        let so1 = document.getElementById("o1").value;
+        let so2 = document.getElementById("o2").value;
+        let ptc = Number(so1) / Number(so2);
+        document.getElementById("kq").innerHTML = ptc;
+    }
+</script>

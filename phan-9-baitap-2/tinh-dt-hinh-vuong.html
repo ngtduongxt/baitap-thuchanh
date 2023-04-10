@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Tính Diện Tích Hình Vuông</h2>
+
+
+<input id="a" type="number" placeholder="Nhập cạnh a">
+<button onclick="tdt()">Tính Diện Tích</button>
+<br>
+<br>
+<h4><div id="kq"></div></h4>
+</body>
+</html>
+
+
+<script>
+  function tdt(){
+    let ca = parseFloat(document.getElementById("a").value);
+    let dt = ca * ca
+
+    if (ca > 0)
+      document.getElementById("kq").innerText = "Diện tích hình vuông là: " + dt;
+    else
+      document.getElementById("kq").innerText = "Vui lòng nhập số hợp lệ!";
+  }
+</script>

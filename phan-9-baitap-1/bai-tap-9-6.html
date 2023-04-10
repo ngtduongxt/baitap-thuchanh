@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Tính tiền hoa hồng</h2>
+<p>- Doanh thu từ 50.000.000đ đến 75.000.000đ nhận 3%
+</p>
+<p>- Doanh thu từ 75.000.000đ đến 100.000.000đ nhận 5%
+</p>
+<p>- Doanh thu trên 100.000.000đ nhận 7%
+</p>
+<input type="number" id="dsbh" placeholder="Doanh số bán hàng">
+<br>
+<br>
+<button onclick="thh()">Tính Hoa Hồng</button>
+<br>
+<br>
+<id id="kq"></id>
+</body>
+</html>
+
+
+<script>
+    function thh() {
+        let ndsbh = parseFloat(document.getElementById("dsbh").value);
+        if (ndsbh > 50000000 && ndsbh < 75000000) {
+            document.getElementById("kq").innerText = "Hoa hồng nhận là 3%. Số tiền bạn nhận được là: " + (ndsbh * 3) / 100;
+        } else if (ndsbh >= 75000000 && ndsbh <= 100000000 ) {
+            document.getElementById("kq").innerText = "Hoa hồng nhận là 5%. Số tiền bạn nhận được là: " + (ndsbh * 5) / 100;
+        } else if (ndsbh > 100000000) {
+            document.getElementById("kq").innerText = "Hoa hồng nhận là 7%. Số tiền bạn nhận được là: " + (ndsbh * 7) / 100;
+        } else {
+            document.getElementById("kq").innerText = "Không được hoa hồng";
+        }
+    }
+</script>
